@@ -36,6 +36,7 @@ group :development, :test do
   gem 'byebug'
   gem 'foreman'
   gem 'pry'
+  gem 'heroku'
 end
 
 group :development do
