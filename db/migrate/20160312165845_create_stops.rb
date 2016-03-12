@@ -1,16 +1,12 @@
 class CreateStops < ActiveRecord::Migration
   def change
     create_table :stops do |t|
-      t.integer :id
-      t.string :title
-      t.integer :mediatype
-      t.string :media
-      t.integer :item
-      t.string :itemdate
-      t.string :itemartist
-      t.string :itemimagefile
-      t.tour :tour
-      t.integer :stopnumber
+      t.string :title, null: false
+      t.integer :media_type, null: false
+      t.string :media, null: false
+      t.string :item_id, null: false
+      t.belongs_to :tour, null: false
+      t.integer :stop_number, null: false
 
       t.timestamps null: false
     end
