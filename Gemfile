@@ -26,10 +26,16 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'aws-sdk-v1'
 
+group :test do
+  gem 'rspec-rails'
+  gem 'factory_girl'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'foreman'
+  gem 'pry'
 end
 
 group :development do
