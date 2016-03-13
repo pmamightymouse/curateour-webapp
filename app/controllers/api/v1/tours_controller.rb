@@ -1,5 +1,7 @@
 class Api::V1::ToursController < AuthenticatedApiController
 
+  skip_before_action :authenticate_user!, only: [ :index ]
+
   def create
     @tour = current_user.tours.build(tour_params)
     created = @tour.save ? [TourPresenter.new(@tour), :ok] : [ErrorsPresenter.new(@tour), :bad_request]

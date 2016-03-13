@@ -9,6 +9,9 @@ class TourPresenter < BasePresenter
     j.user do
       UserPresenter.new(@tour.user).build(j)
     end
+    j.stops(@tour.stops) do |stop|
+      StopPresenter.new(stop).build(j)
+    end
   end
 
 end

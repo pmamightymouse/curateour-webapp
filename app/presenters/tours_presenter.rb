@@ -1,6 +1,6 @@
 class ToursPresenter < BasePresenter
 
-  def initalize(tours)
+  def initialize(tours)
     @tours = tours
   end
 

@@ -2,6 +2,8 @@ class Api::V1::StopsController < AuthenticatedApiController
 
   before_action :load_tour
 
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
+
   def create
     @stop = @tour.stops.build(stop_params)
     created = @stop.save ? [StopPresenter.new(@stop), :ok] : [ErrorsPresenter.new(@stop), :bad_request]
